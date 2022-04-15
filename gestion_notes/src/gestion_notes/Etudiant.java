@@ -1,6 +1,6 @@
 package gestion_notes;
 
-public class Etudiant {
+public class Etudiant implements Comparable<Etudiant> {
 	private int id;
 	private String nom;
 	private double note;
@@ -11,13 +11,15 @@ public class Etudiant {
 	public String toString() {
 		return "("+this.nom+":"+this.note+")";
 	}
-	//Redéfinir la méthode equals ( public boolean equals(Object obj) ). Deux Etudiants
-	//sans égaux si et seulement s’ils ont la même valeur de id.
 	@Override
 	public boolean equals(Object obj) {
 		return ((Etudiant)obj).id==this.id;
 	}
-	
+	@Override
+	public int compareTo(Etudiant e) {
+		if (this.note==e.note) return 1;
+		return 0;
+	}
 	
 	
 	
