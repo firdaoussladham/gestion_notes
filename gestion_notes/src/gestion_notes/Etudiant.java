@@ -13,14 +13,28 @@ public class Etudiant implements Comparable<Etudiant> {
 	}
 	@Override
 	public boolean equals(Object obj) {
+		if(!(obj instanceof Etudiant) )
+			return false;
 		return ((Etudiant)obj).id==this.id;
 	}
 	@Override
 	public int compareTo(Etudiant e) {
+	
 		if (this.note==e.note) return 1;
 		return 0;
 	}
-	
+	public int getId() {
+		return id;
+	}
+	public String getNom() {
+		return nom;
+	}
+	public double getNote() {
+		return note;
+	}
+	public void setNote(double note) {
+		this.note = note;
+	}
 	
 	
 }
